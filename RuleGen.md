@@ -15,7 +15,6 @@ Parallel condition should contain individual Role on it’s left and right.
 _Note : Once the parallel condition formed it can be grouped._
 
 >**R [parallel] R**
-
 ><img src="https://raw.githubusercontent.com/krish4u/RuleBuilder/master/Parallel%20Allowed.PNG" alt="Parallel condition"></p>
 
 **PARALLEL Rule grouping**
