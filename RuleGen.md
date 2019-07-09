@@ -150,11 +150,11 @@ __x,z__ - Determine the condition is grouping or not.
 
 ### function pushMaster(roleLevel,count)
 Routes to the appropriate ``pushCondProcess``.
-*Parameters:*
+*Parameters:*   
 __roleLevel__ : current role
 __count__ : role count
 
 ### function getActionType (rowCount)
 Determine the action ADD or MODIFY
-*Parameter*:
+*Parameters:*   
 __rowCount__ : number of rows.
