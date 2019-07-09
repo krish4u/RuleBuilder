@@ -65,14 +65,29 @@ If a role alone present it will removed along with any leaf condition present ne
 * Item to be deleted present at beginning or middle of the group then the role and condition next to it will be deleted.
  
 
-
-*Parameters*   
->__getter__ - Scope when clicked
+*Parameters:*   
+__getter__ - current element when clicked.
 ----
-``function validateParing(valBefore, valnext);``
-``function handleSpinner(getter)``
-``function handleOverflow(getVal,scope)``
-``function buildCounter(b)``
+## function validateParing(valBefore, valnext);
+This is a validation function makes sure the grouping done properly and added required identifiers for further processing.
+
+*Parameters:*   
+__valBefore__ - current element when clicked.
+__valnext__ - current element when clicked.
+
+## function handleSpinner(getter)
+On click of ``+`` and ``-`` increase / decrease the roles count. The max and min value will be validated by a function named ``handleOverflow()``.
+*Parameters:*   
+__getter__ - ``+`` or ``-`` button which is clicked.
+
+## function handleOverflow(getVal,scope)
+Developers can limit the number of users for a role via HTML5 ``max`` &amp; ``min`` attributes.
+*Parameters:*   
+__getVal__ - Current incremented / decremented value in spinner
+__scope__ - Actual spinner value field 
+
+## function buildCounter(b)
+fill here
 ``function buildDropdown(selectedRole, roleList)``
 ``function buildCondition(b)``
 ``function subRuleCreation (roleList)``
