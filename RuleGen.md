@@ -38,7 +38,7 @@ Conditions will be placed between two roles and defines how the two roles should
 # cbx_rulegen_core.js
 Rule generator runs on javascript. A function oriented programming apporach.  The functions listed below are handling the major working of rule generator.
 
-## function handleBreak(getId,scope)
+### function handleBreak(getId,scope)
 This function hleps the rule builder to break properly into a second line where the constructed rules reaches the screen width.
 
 *Parameters:*
@@ -46,7 +46,7 @@ This function hleps the rule builder to break properly into a second line where 
 >__scope__ - Actual element that triggres the ``handleBreak`` function.
 
 
-## function handleParallel(v,y)    
+### function handleParallel(v,y)    
 When a condition is set to *``parallel``* it's left and right conditions will be validated as per below
 *Scenario:*
 * Left and right should be independnet Roles.   
@@ -56,7 +56,7 @@ When a condition is set to *``parallel``* it's left and right conditions will be
 __v__ - Current value selected on dropdown   
 __y__ - Scope when clicked
 
-## function closeme(getter)
+### function closeme(getter)
 This function removes a role if user clicks the *``x``* close icon. It takes a single parameter of current scope and traverse to its parent then removes the role.
 
 ##### Independent Role Scenario:
@@ -68,62 +68,93 @@ If a role alone present it will removed along with any leaf condition present ne
 *Parameters:*   
 __getter__ - current element when clicked.
 
-## function validateParing(valBefore, valnext);
+### function validateParing(valBefore, valnext);
 This is a validation function makes sure the grouping done properly and added required identifiers for further processing.
 
 *Parameters:*   
 __valBefore__ - current element when clicked.
 __valnext__ - current element when clicked.
 
-## function handleSpinner(getter)
+### function handleSpinner(getter)
 On click of ``+`` and ``-`` increase / decrease the roles count. The max and min value will be validated by a function named ``handleOverflow()``.
 
 *Parameters:*   
 __getter__ - ``+`` or ``-`` button which is clicked.
 
-## function handleOverflow(getVal,scope)
+### function handleOverflow(getVal,scope)
 Developers can limit the number of users for a role via HTML5 ``max`` &amp; ``min`` attributes.
 
 *Parameters:*   
 __getVal__ - Current incremented / decremented value in spinner
 __scope__ - Actual spinner value field 
 
-## function buildCounter(b)
+### function buildCounter(b)
 This funcion generates template for role counter. Based on the user input the counter value ``b`` set and append to the role template.
 
 *Parameters:*   
 __b__ - Number of Role value.
 
-## function buildDropdown(selectedRole, roleList)
+### function buildDropdown(selectedRole, roleList)
 This function builds the dropdown template and append to the role template. The roles will be fetched from backend and passed to this function.
 
 *Parameters:*   
 __selectedRole__ - User input for the role name from dropdown.
 __roleList__ - List of roles from Database.
 
-## function buildCondition(b)
+### function buildCondition(b)
 Builds the condition template with user selected input.
 *__Note : As of now the template is hardcoded and satic. It should be change as dynamic.__*
 
 *Parameters:*   
 __b__ - User input from condition dropdown.
 
-## function parallelCheck(g)
+### function parallelCheck(g)
 Validating ``parallel`` condition by taking all possible allowed / not allowed conditions.
 This check will happen when user tries to group / ungroup.
 
 *Parameters:*   
 __g__ - Current groping value ( Group /  Ungroup)
 
-## function subRuleCreation (roleList)
+### function subRuleCreation (roleList)
 *Suspended function - Not in use*
 
 
-## Getting a rule from DB and process it
-``function frameRoleTemplate(userCount, roleLvl)``
-``function pushRoleProcess(x,z,nextvalue)``
-``function decideLogic(nextvalue)``
-``function pusherClosegrp()``
-``function pushCondProcess(x,z)``
-``function pushMaster(roleLevel,count)``
-``function getActionType (rowCount) ``
+# Generating rule from existing set ( Reversh Push )
+Editing an already existing rule will be handled by the below functions.
+
+### function pushRoleProcess(x,z,nextvalue)
+This is the function initially called when a rule is trying to get build.  It will have a ``pushcounter`` to get track of rule build process.
+
+From this function there will a call to ``frameRoleTemplate()`` function.
+
+### function frameRoleTemplate(userCount, roleLvl)
+This function will build user template and append it to the role template.
+*Parameters:*   
+__userCount__ - Number of users count
+__roleLvl__ - role value
+
+
+### function decideLogic(nextvalue)
+This function is responsible for generate roles grouped or ungrouped
+*Parameters:*   
+__nextvalue__ - Gives the next values coming up in role.
+
+
+### function pusherClosegrp()
+Find ending of a group and closes the group.
+
+### function pushCondProcess(x,z)
+Prepares condition template and append to the rule.
+*Parameters:*   
+__x,z__ - Determine the condition is grouping or not.
+
+### function pushMaster(roleLevel,count)
+Routes to the appropriate ``pushCondProcess``.
+*Parameters:*
+__roleLevel__ : current role
+__count__ : role count
+
+### function getActionType (rowCount)
+Determine the action ADD or MODIFY
+*Parameter*:
+__rowCount__ : number of rows.
