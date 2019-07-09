@@ -64,11 +64,10 @@ If a role alone present it will removed along with any leaf condition present ne
 ##### Grouped Role Scenario:
 * Item to be deleted present at end of the group then the role alone will be deleted.
 * Item to be deleted present at beginning or middle of the group then the role and condition next to it will be deleted.
- 
 
 *Parameters:*   
 __getter__ - current element when clicked.
-----
+
 ## function validateParing(valBefore, valnext);
 This is a validation function makes sure the grouping done properly and added required identifiers for further processing.
 
