@@ -38,17 +38,30 @@ Conditions will be placed between two roles and defines how the two roles should
 Rule generator runs on javascript. A function oriented programming apporach.  The functions listed below are handling the major working of rule generator.
 
 ## Building a rule and process it
-*``function handleBreak(getId,scope)``*
+**``function handleBreak(getId,scope)``**
+
+---
 This function hleps the rule builder to break properly into a second line where the constructed rules reaches the screen width.
->__getId__ - To identifiy the section supposed to brought to next line is grouped or ungrouped
+*Parameters*
+>__getId__ - To identifiy the section supposed to brought to next line is grouped or ungrouped   
 >__scope__ - Actual element that triggres the ``handleBreak`` function.
 
-*``function handleParallel(v,y)``*
-When a condition is set to *``parallel``*
->v - Current value selected on dropdown
->y - Scope when clicked
+
+**``function handleParallel(v,y)``**
+
+---
+When a condition is set to *``parallel``* it's left and right conditions will be validated and make sure there is
+1. Left and right should be independnet Roles.
+2. If it supposed to be grouped with other groups the conditions present in the group should be ``parallel``.    
+
+*Parameters*   
+>__v__ - Current value selected on dropdown   
+>__y__ - Scope when clicked
+
 
 ``function closeme(getter)``
+
+----
 ``function validateParing(valBefore, valnext);``
 ``function handleSpinner(getter)``
 ``function handleOverflow(getVal,scope)``
