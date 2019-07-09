@@ -77,22 +77,26 @@ __valnext__ - current element when clicked.
 
 ## function handleSpinner(getter)
 On click of ``+`` and ``-`` increase / decrease the roles count. The max and min value will be validated by a function named ``handleOverflow()``.
+
 *Parameters:*   
 __getter__ - ``+`` or ``-`` button which is clicked.
 
 ## function handleOverflow(getVal,scope)
 Developers can limit the number of users for a role via HTML5 ``max`` &amp; ``min`` attributes.
+
 *Parameters:*   
 __getVal__ - Current incremented / decremented value in spinner
 __scope__ - Actual spinner value field 
 
 ## function buildCounter(b)
 This funcion generates template for role counter. Based on the user input the counter value ``b`` set and append to the role template.
+
 *Parameters:*   
 __b__ - Number of Role value.
 
 ## function buildDropdown(selectedRole, roleList)
 This function builds the dropdown template and append to the role template. The roles will be fetched from backend and passed to this function.
+
 *Parameters:*   
 __selectedRole__ - User input for the role name from dropdown.
 __roleList__ - List of roles from Database.
@@ -100,12 +104,14 @@ __roleList__ - List of roles from Database.
 ## function buildCondition(b)
 Builds the condition template with user selected input.
 *__Note : As of now the template is hardcoded and satic. It should be change as dynamic.__*
+
 *Parameters:*   
 __b__ - User input from condition dropdown.
 
 ## function parallelCheck(g)
 Validating ``parallel`` condition by taking all possible allowed / not allowed conditions.
 This check will happen when user tries to group / ungroup.
+
 *Parameters:*   
 __g__ - Current groping value ( Group /  Ungroup)
 
