@@ -15,12 +15,14 @@ Parallel condition should contain individual Role on it’s left and right.
 _Note : Once the parallel condition formed it can be grouped._
 
 >**R [parallel] R**
-<img src="https://raw.githubusercontent.com/krish4u/RuleBuilder/master/Parallel%20Allowed.PNG" alt="Parallel condition"></p>
+
+><img src="https://raw.githubusercontent.com/krish4u/RuleBuilder/master/Parallel%20Allowed.PNG" alt="Parallel condition"></p>
 
 **PARALLEL Rule grouping**
-A parallel condition can be grouped only with other parallel group
 
-><p>[R-Parallel-R-Parallel-R-Parallel-R]  <img src="https://raw.githubusercontent.com/krish4u/RuleBuilder/master/Parallel_Grouping_Allowed.PNG" alt="enter image descriptionhere"></p>
+A parallel condition can be grouped only with other parallel group
+>[R-Parallel-R-Parallel-R-Parallel-R]  
+><img src="https://raw.githubusercontent.com/krish4u/RuleBuilder/master/Parallel_Grouping_Allowed.PNG" alt="enter image descriptionhere">
 
 ## Role - UI
 User Interface for a role will contains number of persons and their role and a dropdown indicator to change the role names using a dropdown.
