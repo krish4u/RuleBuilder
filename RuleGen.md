@@ -14,8 +14,8 @@ The above combination will result the below
 Parallel condition should contain individual Role on it’s left and right.
 _Note : Once the parallel condition formed it can be grouped._
 
->**R [parallel] R**
-><img src="https://raw.githubusercontent.com/krish4u/RuleBuilder/master/Parallel%20Allowed.PNG" alt="Parallel condition"></p>
+**R [parallel] R**
+><img src="https://raw.githubusercontent.com/krish4u/RuleBuilder/master/Parallel%20Allowed.PNG" alt="Parallel condition">
 
 **PARALLEL Rule grouping**
 
@@ -35,10 +35,19 @@ Conditions will be placed between two roles and defines how the two roles should
 <img src="https://github.com/krish4u/RuleBuilder/blob/master/Condition_UI.PNG?raw=true" alt="Condition UI"></p>
 
 # cbx_rulegen_core.js
-Rule generator runs on javascript.  The functions listed below are handling the major working of rule generator.
+Rule generator runs on javascript. A function oriented programming apporach.  The functions listed below are handling the major working of rule generator.
+
 ## Building a rule and process it
-``function handleBreak(getId,scope)``
-``function handleParallel(v,y)``
+*``function handleBreak(getId,scope)``*
+This function hleps the rule builder to break properly into a second line where the constructed rules reaches the screen width.
+>__getId__ - To identifiy the section supposed to brought to next line is grouped or ungrouped
+>__scope__ - Actual element that triggres the ``handleBreak`` function.
+
+*``function handleParallel(v,y)``*
+When a condition is set to *``parallel``*
+>v - Current value selected on dropdown
+>y - Scope when clicked
+
 ``function closeme(getter)``
 ``function validateParing(valBefore, valnext);``
 ``function handleSpinner(getter)``
