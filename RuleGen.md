@@ -37,28 +37,37 @@ Conditions will be placed between two roles and defines how the two roles should
 # cbx_rulegen_core.js
 Rule generator runs on javascript. A function oriented programming apporach.  The functions listed below are handling the major working of rule generator.
 
-## Building a rule and process it
-**``function handleBreak(getId,scope)``**
+## function handleBreak(getId,scope)
 This function hleps the rule builder to break properly into a second line where the constructed rules reaches the screen width.
-*Parameters*
+
+*Parameters:*
 >__getId__ - To identifiy the section supposed to brought to next line is grouped or ungrouped   
 >__scope__ - Actual element that triggres the ``handleBreak`` function.
 
----
 
-**``function handleParallel(v,y)``**
-When a condition is set to *``parallel``* it's left and right conditions will be validated and make sure there is
-1. Left and right should be independnet Roles.
-2. If it supposed to be grouped with other groups the conditions present in the group should be ``parallel``.    
+## function handleParallel(v,y)    
+When a condition is set to *``parallel``* it's left and right conditions will be validated as per below
+*Scenario:*
+* Left and right should be independnet Roles.   
+* If it supposed to be grouped with other groups the conditions present in the group should be ``parallel``.    
+
+*Parameters:*   
+__v__ - Current value selected on dropdown   
+__y__ - Scope when clicked
+
+## function closeme(getter)
+This function removes a role if user clicks the *``x``* close icon. It takes a single parameter of current scope and traverse to its parent then removes the role.
+
+##### Independent Role Scenario:
+If a role alone present it will removed along with any leaf condition present next to the deleted role.  
+##### Grouped Role Scenario:
+* Item to be deleted present at end of the group then the role alone will be deleted.
+* Item to be deleted present at beginning or middle of the group then the role and condition next to it will be deleted.
+ 
+
 
 *Parameters*   
->__v__ - Current value selected on dropdown   
->__y__ - Scope when clicked
-
----
-
-``function closeme(getter)``
-
+>__getter__ - Scope when clicked
 ----
 ``function validateParing(valBefore, valnext);``
 ``function handleSpinner(getter)``
